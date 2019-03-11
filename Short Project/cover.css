@@ -1,0 +1,236 @@
+/* book cover background */
+.container {
+    height: 600px;
+    width: 380px;
+    background: #fff6e0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0 -50% 0 0;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    filter: grayscale(.8);
+}
+
+.container::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    display: block;
+    content: '';
+    width: 0;
+    height: 0;
+    background: rgba(255,255,255,.2);
+    border-radius: 100%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+.container:hover{
+    animation: bloom ease-in-out .75s forwards;
+}
+.container:hover::before {
+    animation: circle .75s;
+}
+
+@keyframes bloom {
+    0% {
+        filter: grayscale(.8);
+    }
+    40% {
+        filter: grayscale(.5);
+    }
+    100% {
+        filter: grayscale(0);
+    }
+}
+@keyframes circle {
+    0% {
+        opacity: .5;
+        background: rgba(213,156,34,.2);
+    }
+    40% {
+        opacity: 1;
+        background: rgba(213,34,160,.2);
+    }
+    100% {
+        width: 200%;
+        height: 200%;
+        opacity: 0;
+    }
+}
+
+
+/* title text */
+@keyframes title_fade {
+    0% {opacity: 0;}
+    50% {opacity: 0.5;}
+    75% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+.title {
+    height: 80px;
+    font-family: Helvetica, serif;
+    font-size: 35px;
+    font-weight: bolder;
+    line-height: 35px;
+    margin: 10px 0 0 20px;
+    opacity: 0;
+    animation: title_fade 3s infinite linear;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+}
+
+/* author text */
+.author {
+    font-family: Helvetica, serif;
+    font-size: 17px;
+    font-weight: lighter;
+    line-height: 2px;
+    margin: 15px 0 0 20px;
+}
+
+/* circle */
+@keyframes rotate {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
+}
+
+.circle {
+    background-color: transparent;
+    height: 340px;
+    width: 340px;
+    border-radius: 340px;
+    border: 2px solid royalblue;
+    margin: 140px 0 0 18px;
+    animation: rotate 9s infinite linear;
+}
+
+/*!* center circle *!*/
+/*.center {*/
+    /*background-color: #fff6e0;*/
+    /*height: 2px;*/
+    /*width: 100px;*/
+    /*border-radius: 2px;*/
+    /*border: 2px solid royalblue;*/
+    /*margin: 150px 0 0 18px;*/
+    /*position: absolute;*/
+    /*z-index: 1*/
+/*}*/
+
+/* 12 lines */
+.line {
+    height: 1px;
+    width: 342px;
+    background-color: royalblue;
+    margin: 170px 0 0 0;
+    position: absolute;
+    transform-origin: bottom center;
+    -webkit-transform-origin: bottom center;
+}
+
+/* 15 degrees */
+.one {
+    transform: rotate(-15deg);
+    -webkit-transform: rotate(-15deg);
+}
+
+/* 30 degrees */
+.two {
+     transform: rotate(-30deg);
+     -webkit-transform: rotate(-30deg);
+ }
+
+/* 45 degrees */
+.three {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+/* 60 degrees */
+.four {
+    transform: rotate(-60deg);
+    -webkit-transform: rotate(-60deg);
+}
+
+/* 75 degrees */
+.five {
+    transform: rotate(-75deg);
+    -webkit-transform: rotate(-75deg);
+}
+
+/* 90 degrees */
+.six {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+}
+
+/* 105 degrees */
+.seven {
+    transform: rotate(75deg);
+    -webkit-transform: rotate(75deg);
+}
+
+/* 120 degrees */
+.eight {
+    transform: rotate(60deg);
+    -webkit-transform: rotate(60deg);
+}
+
+/* 135 degrees */
+.nine {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+/* 150 degrees */
+.ten {
+    transform: rotate(30deg);
+    -webkit-transform: rotate(30deg);
+}
+
+/* 185 degrees */
+.eleven {
+    transform: rotate(15deg);
+    -webkit-transform: rotate(15deg);
+}
+
+/* 180 degrees */
+.twelve {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+}
+
+/* Orange horizontal lines */
+
+.orange {
+    height: 7px;
+    width: 280px;
+    background-color: darkorange;
+    position: absolute;
+    opacity: 0.7;
+}
+
+@keyframes a_move {
+    0%, 100% { top: 0px; left:0px; }
+    25% { top: -30px; left: 0px; }
+    75% { top: 30px; left: 0px; }
+}
+
+.a {
+    margin: 145px 0 0 30px;
+    animation: a_move 6s infinite linear;
+}
+
+@keyframes b_move {
+    0%, 100% { top: 0px; left: 0px; }
+    25% { top: -30px; left: 0px; }
+    75% { top: 30px; left: 0px; }
+}
+
+.b {
+    margin: 185px 0 0 30px;
+    animation: b_move 6s infinite linear;
+}
